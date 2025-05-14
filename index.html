@@ -1,12 +1,75 @@
 <HTML>
   <HEAD>
-    <TITLE>TGTV</TITLE>
+    <TITLE>Tennis Games TV Redirect</TITLE>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
-        if (window.location.search === '?g=ts2k25') {
-            window.location.href = 'https://store.steampowered.com/app/1785650/TopSpin_2K25/';
-        }
+	    const gameMap = new Map();
+		gameMap.set("?g=ts25", "https://store.steampowered.com/app/1785650/TopSpin_2K25/");
+		gameMap.set("?g=te4", "https://store.steampowered.com/app/760640/Tennis_Elbow_4/");
+		gameMap.set("?g=fa", "https://store.steampowered.com/app/779430/Full_Ace_Tennis_Simulator/");
+		gameMap.set("?g=tb", "https://store.steampowered.com/app/2264340/TIEBREAK_Official_game_of_the_ATP_and_WTA/");
+		gameMap.set("?g=cst", "https://store.steampowered.com/app/3471130/Casual_Sport_Series_Tennis/");
+		gameMap.set("?g=stb", "https://store.steampowered.com/app/1050510/Super_Tennis_Blast/");
+		gameMap.set("?g=cct3", "https://store.steampowered.com/app/3450760/Cross_Court_Tennis_3/");
+		gameMap.set("?g=tf", "https://store.steampowered.com/app/994180/Tennis_Fighters/");
+		
+		const DELAY = 25;
+		var counter = DELAY;
+		var gameUrl = "";
+        $(document).ready(function () {
+		    $("#delay").text(counter);
+		    for (const [key, value] of gameMap) {
+				if (window.location.search.toLowerCase().trim() === key.toLowerCase().trim()) {
+					gameUrl = value;
+					break;
+				}
+			}
+			$("#gamehref").attr("href", gameUrl);
+		    var intervalID = setInterval(function() {
+			    $("#delay").text(counter);
+				counter --;
+            }, 1000);
+            setTimeout(function() {
+                clearInterval(intervalID);
+				window.location.href = gameUrl;
+            }, DELAY * 1000);
+		});
     </script>
   </HEAD>
   <BODY>
+    <p style="text-align:center;">
+      <b>Redirecting to game page in <span id="delay"></span> seconds.</b><br/>
+	  If you're not redirected, please <a id="gamehref">click here</a>.<br/> 
+    </p>
+	<div class="adcont">
+	<p style="text-align:center;">ADVERTISEMENT</p>
+	<div class="appad">
+	  <a target="_blank" href='https://play.google.com/store/apps/details?id=com.snps.apps.baseapp'><img class="appimg" src="pricealarm.webp"></img></a>
+	  <p style="text-align:center;">
+	    <h3><b>PriceAlarm</b></h3>
+	    <p> Set up Price-Drop Alerts! </p>
+	  </p>
+	  <a target="_blank" href='https://play.google.com/store/apps/details?id=com.snps.apps.baseapp'><img class="appbtn" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+	</div>
+	
+	<div class="appad">
+	  <a target="_blank" href='https://play.google.com/store/apps/details?id=com.snps.apps.sudoku9'><img class="appimg" src="piano.webp"></img></a>
+	  <p style="text-align:center;">
+	    <h3><b>Simple Piano</b></h3>
+	    <p>Play Piano on your Phone!</p>
+	  </p>
+	  <a target="_blank" href='https://play.google.com/store/apps/details?id=com.snps.apps.sudoku9'><img class="appbtn" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+	</div>
+	
+	<div class="appad">
+	  <a target="_blank" href='https://play.google.com/store/apps/details?id=com.snps.apps.puzzle3x3'><img class="appimg" src="puzzle.webp"></img></a>
+	  <p style="text-align:center;">
+	    <h3><b>Tile Puzzle</b></h3>
+	    <p>Classic Number Sliding Puzzle!</p>
+	  </p>
+	  <a target="_blank" href='https://play.google.com/store/apps/details?id=com.snps.apps.puzzle3x3'><img class="appbtn" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
+	</div>
+	</div>
   </BODY>
 </HTML>

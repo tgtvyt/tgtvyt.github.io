@@ -1,0 +1,36 @@
+
+body {
+	font-family: Verdana,sans-serif;
+}
+.adcont {
+	margin-top: 10%;
+	vertical-align: middle;
+	text-align: center;
+}
+.appad {
+	margin-bottom:1%;
+	display:inline-block;
+	width: 30%;
+	height:auto;
+	border-style: solid;
+	border-color: black;
+	text-align: center;
+	border-radius: 2px;
+	border-width:2px;
+	overflow:hidden;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.appimg {
+	height: auto;
+	width: 50%;
+	vertical-align: middle;
+	margin-top: 10px;
+	border-radius: 32px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.appbtn {
+	width: 50%;
+    height: auto;
+}
