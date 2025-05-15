@@ -2,8 +2,18 @@
 body {
 	font-family: Verdana,sans-serif;
 }
+.header {
+	vertical-align: middle;
+	text-align: center;
+}
+.header img {
+	width: 50%;
+	border-style: solid;
+	border-radius: 8px;
+	border-width:2px;
+}
 .adcont {
-	margin-top: 10%;
+	margin-top: 5%;
 	vertical-align: middle;
 	text-align: center;
 }

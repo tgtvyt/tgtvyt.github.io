@@ -27,20 +27,26 @@
 					break;
 				}
 			}
-			$("#gamehref").attr("href", gameUrl);
-		    var intervalID = setInterval(function() {
-			    $("#delay").text(counter);
-				counter --;
-            }, 1000);
-            setTimeout(function() {
-                clearInterval(intervalID);
-				window.location.href = gameUrl;
-            }, DELAY * 1000);
+			if (gameUrl === "") {
+			    $("#redirectp").remove();
+				$("#header").prepend('<img src="header.jpg" /><h2>Welcome to Tennis Games TV!</h2><iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=qMurTUdeFCDkpU7E&amp;list=PL5mWpyWQbj2qB1wHMssFT6Dh5dUQvdMeI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
+			} else {
+			    $("#gamehref").attr("href", gameUrl);
+		        var intervalID = setInterval(function() {
+			        $("#delay").text(counter);
+				    counter --;
+                }, 1000);
+                setTimeout(function() {
+                    clearInterval(intervalID);
+				    window.location.href = gameUrl;
+                }, DELAY * 1000);
+			}
 		});
     </script>
   </HEAD>
   <BODY>
-    <p style="text-align:center;">
+    <div class="header" id="header"></div>
+    <p id="redirectp" style="text-align:center;">
       <b>Redirecting to game page in <span id="delay"></span> seconds.</b><br/>
 	  If you're not redirected, please <a id="gamehref">click here</a>.<br/> 
     </p>
