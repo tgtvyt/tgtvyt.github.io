@@ -25,12 +25,12 @@ body {
 	height: auto;
 	width: 50%;
 	vertical-align: middle;
-	margin-top: 10px;
-	border-radius: 32px;
+	margin-top: 4%;
+	border-radius: 16%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .appbtn {
-	width: 50%;
+	width: 75%;
     height: auto;
 }

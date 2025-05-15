@@ -6,22 +6,23 @@
 	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script>
 	    const gameMap = new Map();
-		gameMap.set("?g=ts25", "https://store.steampowered.com/app/1785650/TopSpin_2K25/");
-		gameMap.set("?g=te4", "https://store.steampowered.com/app/760640/Tennis_Elbow_4/");
-		gameMap.set("?g=fa", "https://store.steampowered.com/app/779430/Full_Ace_Tennis_Simulator/");
-		gameMap.set("?g=tb", "https://store.steampowered.com/app/2264340/TIEBREAK_Official_game_of_the_ATP_and_WTA/");
-		gameMap.set("?g=cst", "https://store.steampowered.com/app/3471130/Casual_Sport_Series_Tennis/");
-		gameMap.set("?g=stb", "https://store.steampowered.com/app/1050510/Super_Tennis_Blast/");
-		gameMap.set("?g=cct3", "https://store.steampowered.com/app/3450760/Cross_Court_Tennis_3/");
-		gameMap.set("?g=tf", "https://store.steampowered.com/app/994180/Tennis_Fighters/");
+		gameMap.set("ts25", "https://store.steampowered.com/app/1785650/TopSpin_2K25/");
+		gameMap.set("te4", "https://store.steampowered.com/app/760640/Tennis_Elbow_4/");
+		gameMap.set("fa", "https://store.steampowered.com/app/779430/Full_Ace_Tennis_Simulator/");
+		gameMap.set("tb", "https://store.steampowered.com/app/2264340/TIEBREAK_Official_game_of_the_ATP_and_WTA/");
+		gameMap.set("cst", "https://store.steampowered.com/app/3471130/Casual_Sport_Series_Tennis/");
+		gameMap.set("stb", "https://store.steampowered.com/app/1050510/Super_Tennis_Blast/");
+		gameMap.set("cct3", "https://store.steampowered.com/app/3450760/Cross_Court_Tennis_3/");
+		gameMap.set("tf", "https://store.steampowered.com/app/994180/Tennis_Fighters/");
 		
 		const DELAY = 25;
 		var counter = DELAY;
 		var gameUrl = "";
         $(document).ready(function () {
 		    $("#delay").text(counter);
+			var gameName = window.location.search.toLowerCase().trim().replace("?g=/", "").replace("?g=\\", "");
 		    for (const [key, value] of gameMap) {
-				if (window.location.search.toLowerCase().trim() === key.toLowerCase().trim()) {
+				if (gameName === key.toLowerCase().trim()) {
 					gameUrl = value;
 					break;
 				}
